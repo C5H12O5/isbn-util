@@ -54,6 +54,21 @@ public class ISBNTest {
         assertTrue(ISBN.isValid("7-03-014726-X"));
         assertTrue(ISBN.isValid("9787030387226"));
         assertTrue(ISBN.isValid("978-7-03-038722-6"));
+
+        assertFalse(ISBN.isValid(" 703014726X"));
+        assertFalse(ISBN.isValid(" 7-03-014726-X"));
+        assertFalse(ISBN.isValid(" 9787030387226"));
+        assertFalse(ISBN.isValid(" 978-7-03-038722-6"));
+
+        assertFalse(ISBN.isValid("7030147260"));
+        assertFalse(ISBN.isValid("7-03-014726-0"));
+        assertFalse(ISBN.isValid("9787030387220"));
+        assertFalse(ISBN.isValid("978-7-03-038722-0"));
+
+        assertFalse(ISBN.isValid("7-0-3014726-X"));
+        assertFalse(ISBN.isValid("7-0301-4726-X"));
+        assertFalse(ISBN.isValid("978-70-3-038722-6"));
+        assertFalse(ISBN.isValid("978-7-0303-8722-6"));
     }
 
     @Test
@@ -84,6 +99,7 @@ public class ISBNTest {
         assertTrue(ISBN.equals("703014726X", "703014726X"));
         assertTrue(ISBN.equals("703014726X", "978-7-03-014726-4"));
         assertTrue(ISBN.equals("7-03-014726-X", "9787030147264"));
+        assertTrue(ISBN.equals("7030387228", "9787030387226"));
         assertTrue(ISBN.equals("9787030387226", "978-7-03-038722-6"));
     }
 
@@ -102,5 +118,8 @@ public class ISBNTest {
         assertEquals("7-03-014726-X", ISBN.formatISBN10(" 703014726X ", "-"));
         assertEquals("7030387228", ISBN.formatISBN10(" 9787030387226 "));
         assertNull(ISBN.formatISBN10("9798602405453", "-"));
+        assertNull(ISBN.formatISBN10("", "-"));
+        assertNull(ISBN.formatISBN10(null, null));
+        assertNull(ISBN.formatISBN10(null));
     }
 }
