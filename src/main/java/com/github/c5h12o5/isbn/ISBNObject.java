@@ -1,6 +1,7 @@
 package com.github.c5h12o5.isbn;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
  * This class represents the structure of an ISBN, comprising the following elements:
@@ -176,5 +177,37 @@ public class ISBNObject implements Serializable {
         }
         int checkDigit = (11 - sum % 11) % 11;
         return (checkDigit == 10) ? 'X' : (char) (checkDigit + '0');
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+
+        ISBNObject that = (ISBNObject) o;
+
+        if (!Objects.equals(gs1Prefix, that.gs1Prefix)) {
+            return false;
+        }
+        if (!Objects.equals(registrationGroup, that.registrationGroup)) {
+            return false;
+        }
+        if (!Objects.equals(registrant, that.registrant)) {
+            return false;
+        }
+        return Objects.equals(publication, that.publication);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = gs1Prefix != null ? gs1Prefix.hashCode() : 0;
+        result = 31 * result + (registrationGroup != null ? registrationGroup.hashCode() : 0);
+        result = 31 * result + (registrant != null ? registrant.hashCode() : 0);
+        result = 31 * result + (publication != null ? publication.hashCode() : 0);
+        return result;
     }
 }

@@ -226,7 +226,7 @@ public final class ISBN {
      * @return {@code true} if the two ISBN codes are equal, otherwise {@code false}
      */
     public static boolean equals(String isbnA, String isbnB) {
-        if (!isValidLength(isbnA) || !isValidLength(isbnB)) {
+        if (!isValid(isbnA) || !isValid(isbnB)) {
             return false;
         }
         String isbnA13 = formatISBN13(isbnA);

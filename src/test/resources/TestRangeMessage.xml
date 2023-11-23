@@ -1,0 +1,187 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE ISBNRangeMessage [
+<!ELEMENT ISBNRangeMessage (MessageSource?, MessageSerialNumber?, MessageDate, EAN.UCCPrefixes, RegistrationGroups) >
+<!ELEMENT MessageSource (#PCDATA) >
+<!ELEMENT MessageSerialNumber (#PCDATA) >
+<!ELEMENT MessageDate (#PCDATA) >
+<!ELEMENT EAN.UCCPrefixes (EAN.UCC+) >
+<!ELEMENT RegistrationGroups (Group+) >
+<!ELEMENT EAN.UCC (Prefix, Agency, Rules) >
+<!ELEMENT Group (Prefix, Agency, Rules) >
+<!ELEMENT Rules (Rule+) >
+<!ELEMENT Rule (Range, Length) >
+<!ELEMENT Prefix (#PCDATA) >
+<!ELEMENT Agency (#PCDATA) >
+<!ELEMENT Range (#PCDATA) >
+<!ELEMENT Length (#PCDATA) >
+]>
+<ISBNRangeMessage>
+  <MessageSource>International ISBN Agency</MessageSource>
+  <MessageDate>Sat, 11 Nov 2023 11:11:11 GMT</MessageDate>
+  <EAN.UCCPrefixes>
+    <EAN.UCC>
+      <Prefix>979</Prefix>
+      <Agency>International ISBN Agency</Agency>
+      <Rules>
+        <Rule>
+          <Range>0000000-0999999</Range>
+          <Length>0</Length>
+        </Rule>
+        <Rule>
+          <Range>1000000-1299999</Range>
+          <Length>2</Length>
+        </Rule>
+        <Rule>
+          <Range>1300000-7999999</Range>
+          <Length>0</Length>
+        </Rule>
+        <Rule>
+          <Range>8000000-8999999</Range>
+          <Length>1</Length>
+        </Rule>
+        <Rule>
+          <Range>9000000-9999999</Range>
+          <Length>0</Length>
+        </Rule>
+      </Rules>
+    </EAN.UCC>
+  </EAN.UCCPrefixes>
+  <RegistrationGroups>
+    <Group>
+      <Prefix>979-10</Prefix>
+      <Agency>France</Agency>
+      <Rules>
+        <Rule>
+          <Range>0000000-1999999</Range>
+          <Length>2</Length>
+        </Rule>
+        <Rule>
+          <Range>2000000-6999999</Range>
+          <Length>3</Length>
+        </Rule>
+        <Rule>
+          <Range>7000000-8999999</Range>
+          <Length>4</Length>
+        </Rule>
+        <Rule>
+          <Range>9000000-9759999</Range>
+          <Length>5</Length>
+        </Rule>
+        <Rule>
+          <Range>9760000-9999999</Range>
+          <Length>6</Length>
+        </Rule>
+      </Rules>
+    </Group>
+    <Group>
+      <Prefix>979-11</Prefix>
+      <Agency>Korea, Republic</Agency>
+      <Rules>
+        <Rule>
+          <Range>0000000-2499999</Range>
+          <Length>2</Length>
+        </Rule>
+        <Rule>
+          <Range>2500000-5499999</Range>
+          <Length>3</Length>
+        </Rule>
+        <Rule>
+          <Range>5500000-8499999</Range>
+          <Length>4</Length>
+        </Rule>
+        <Rule>
+          <Range>8500000-9499999</Range>
+          <Length>5</Length>
+        </Rule>
+        <Rule>
+          <Range>9500000-9999999</Range>
+          <Length>6</Length>
+        </Rule>
+      </Rules>
+    </Group>
+    <Group>
+      <Prefix>979-12</Prefix>
+      <Agency>Italy</Agency>
+      <Rules>
+        <Rule>
+          <Range>0000000-1999999</Range>
+          <Length>0</Length>
+        </Rule>
+        <Rule>
+          <Range>2000000-2999999</Range>
+          <Length>3</Length>
+        </Rule>
+        <Rule>
+          <Range>3000000-5449999</Range>
+          <Length>0</Length>
+        </Rule>
+        <Rule>
+          <Range>5450000-5999999</Range>
+          <Length>4</Length>
+        </Rule>
+        <Rule>
+          <Range>6000000-7999999</Range>
+          <Length>0</Length>
+        </Rule>
+        <Rule>
+          <Range>8000000-8499999</Range>
+          <Length>5</Length>
+        </Rule>
+        <Rule>
+          <Range>8500000-9999999</Range>
+          <Length>0</Length>
+        </Rule>
+      </Rules>
+    </Group>
+    <Group>
+      <Prefix>979-8</Prefix>
+      <Agency>United States</Agency>
+      <Rules>
+        <Rule>
+          <Range>0000000-1999999</Range>
+          <Length>0</Length>
+        </Rule>
+        <Rule>
+          <Range>2000000-2299999</Range>
+          <Length>3</Length>
+        </Rule>
+        <Rule>
+          <Range>2300000-3199999</Range>
+          <Length>0</Length>
+        </Rule>
+        <Rule>
+          <Range>3200000-3499999</Range>
+          <Length>4</Length>
+        </Rule>
+        <Rule>
+          <Range>3500000-8849999</Range>
+          <Length>4</Length>
+        </Rule>
+        <Rule>
+          <Range>8850000-8999999</Range>
+          <Length>5</Length>
+        </Rule>
+        <Rule>
+          <Range>9000000-9099999</Range>
+          <Length>5</Length>
+        </Rule>
+        <Rule>
+          <Range>9100000-9849999</Range>
+          <Length>0</Length>
+        </Rule>
+        <Rule>
+          <Range>9850000-9899999</Range>
+          <Length>7</Length>
+        </Rule>
+        <Rule>
+          <Range>9900000-9929999</Range>
+          <Length>7</Length>
+        </Rule>
+        <Rule>
+          <Range>9930000-9999999</Range>
+          <Length>0</Length>
+        </Rule>
+      </Rules>
+    </Group>
+  </RegistrationGroups>
+</ISBNRangeMessage>
