@@ -14,7 +14,6 @@ import java.io.InputStream;
 import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.Stack;
 
 /**
  * This is the main class of the ISBN utility library. It provides methods to parse, format and validate ISBNs.
