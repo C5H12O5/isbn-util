@@ -1,0 +1,28 @@
+name: Publish package to the Maven Central Repository
+on:
+  push:
+    tags:
+      - v[0-9]*
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Maven Central Repository
+        uses: actions/setup-java@v3
+        with:
+          java-version: '8'
+          distribution: 'temurin'
+          server-id: ossrh
+          server-username: MAVEN_USERNAME
+          server-password: MAVEN_PASSWORD
+          gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
+          gpg-passphrase: SIGN_KEY_PASS
+          cache: 'maven'
+      - name: Publish package
+        run: mvn -U -B clean deploy
+        env:
+          MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
+          MAVEN_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
+          SIGN_KEY_PASS: ${{ secrets.GPG_PASSPHRASE }}
+
