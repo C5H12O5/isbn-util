@@ -6,6 +6,6 @@
 [![Java Support](https://img.shields.io/badge/Java-8+-green?logo=oracle)](https://www.oracle.com/java/)
 [![GitHub License](https://img.shields.io/github/license/c5h12o5/isbn-util?logo=apache&color=4D7A97)](LICENSE)
 
-##### 📖 简体中文 | 📖 [English](README.en-US.md)
+##### 📖 [简体中文](README.md) | 📖 English
 
-本项目是一个简单的 Java ISBN 工具类，可以用于解析、格式化和验证 ISBN 编号。
+This project is a simple ISBN utility written in Java. It can be used to parse, format and validate ISBNs.
