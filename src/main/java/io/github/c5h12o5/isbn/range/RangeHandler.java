@@ -1,4 +1,4 @@
-package com.github.c5h12o5.isbn.range;
+package io.github.c5h12o5.isbn.range;
 
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;

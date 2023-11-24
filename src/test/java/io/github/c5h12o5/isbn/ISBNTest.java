@@ -1,4 +1,4 @@
-package com.github.c5h12o5.isbn;
+package io.github.c5h12o5.isbn;
 
 import org.junit.Test;
 

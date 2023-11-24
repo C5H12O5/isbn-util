@@ -1,4 +1,4 @@
-package com.github.c5h12o5.isbn.range;
+package io.github.c5h12o5.isbn.range;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;

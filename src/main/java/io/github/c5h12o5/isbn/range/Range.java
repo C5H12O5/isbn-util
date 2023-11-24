@@ -1,6 +1,6 @@
-package com.github.c5h12o5.isbn.range;
+package io.github.c5h12o5.isbn.range;
 
-import com.github.c5h12o5.isbn.ISBNException;
+import io.github.c5h12o5.isbn.ISBNException;
 
 import java.io.Serializable;
 

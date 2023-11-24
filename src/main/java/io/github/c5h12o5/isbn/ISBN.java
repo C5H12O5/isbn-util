@@ -1,7 +1,7 @@
-package com.github.c5h12o5.isbn;
+package io.github.c5h12o5.isbn;
 
-import com.github.c5h12o5.isbn.range.RangeCache;
-import com.github.c5h12o5.isbn.range.RangeHandler;
+import io.github.c5h12o5.isbn.range.RangeCache;
+import io.github.c5h12o5.isbn.range.RangeHandler;
 
 import org.xml.sax.SAXException;
 
