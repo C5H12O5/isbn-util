@@ -14,6 +14,7 @@ import java.io.InputStream;
 import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.Stack;
 
 /**
  * This is the main class of the ISBN utility library. It provides methods to parse, format and validate ISBNs.
@@ -131,12 +132,13 @@ public final class ISBN {
     }
 
     /**
-     * Remove all non-digit characters from the given ISBN input, except for the character 'X'.
+     * Remove all non-digit characters from the given ISBN input, except for the last character which can be 'X'.
      *
      * <pre>
      * ISBN.compact(null)                = null
      * ISBN.compact("7-03-014726-X")     = "703014726X"
      * ISBN.compact("978-7-03-038722-6") = "9787030387226"
+     * ISBN.compact("978 7 03 038722 6") = "9787030387226"
      * </pre>
      *
      * @param isbn the ISBN to compact
@@ -147,14 +149,26 @@ public final class ISBN {
             return null;
         }
         StringBuilder sb = new StringBuilder();
-        for (char ch : isbn.toCharArray()) {
+        boolean findCheckDigit = false;
+        char[] charArray = isbn.toCharArray();
+        for (int i = charArray.length - 1; i >= 0; i--) {
+            char ch = charArray[i];
             boolean isDigit = (ch >= CHAR_0 && ch <= CHAR_9);
-            boolean isCharX = (Character.toUpperCase(ch) == CHAR_X);
-            if (isDigit || isCharX) {
-                sb.append(ch);
+            if (!findCheckDigit) {
+                // find the last digit or 'X' character
+                boolean isCharX = (Character.toUpperCase(ch) == CHAR_X);
+                if (isDigit || isCharX) {
+                    sb.append(ch);
+                    findCheckDigit = true;
+                }
+            } else {
+                // find the rest digit characters
+                if (isDigit) {
+                    sb.append(ch);
+                }
             }
         }
-        return sb.toString();
+        return sb.reverse().toString();
     }
 
     /**
@@ -212,11 +226,12 @@ public final class ISBN {
     }
 
     /**
-     * Check if the two given ISBN codes are equal.
+     * Check if the two given ISBN codes are equal, return {@code false} if either one is not valid.
      *
      * <pre>
      * ISBN.equals(null, null)                           = false
      * ISBN.equals("703014726X", null)                   = false
+     * ISBN.equals("703014726X", "7-03-014726-X")        = true
      * ISBN.equals("703014726X", "9787030147264")        = true
      * ISBN.equals("9787030387226", "978-7-03-038722-6") = true
      * </pre>

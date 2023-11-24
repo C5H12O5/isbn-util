@@ -21,6 +21,7 @@ public class RangeHandler extends DefaultHandler {
      * This enum represents the different stages of parsing the XML file.
      */
     private enum ParsingStage {
+
         /** The stage of parsing the registration group ranges */
         REGISTRATION_GROUP("EAN.UCCPrefixes"),
         /** The stage of parsing the registrant ranges */
@@ -95,6 +96,7 @@ public class RangeHandler extends DefaultHandler {
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
         // switch to the next parsing stage if matching
         currentStage = Optional.ofNullable(ParsingStage.match(qName)).orElse(currentStage);
+
         // create a new range if the start element is a rule
         if (RULE.equals(qName)) {
             currentRange = new Range();
