@@ -74,12 +74,12 @@ ISBN.equals("703014726X", "978-7-03-014726-4") = true
 ```java
 ISBNObject obj = ISBN.parse("703014726X");
 
-obj.getGs1Prefix();         // 978
+obj.getGS1Prefix();         // 978
 obj.getRegistrationGroup(); // 7
 obj.getRegistrant();        // 03
 obj.getPublication();       // 014726
-obj.getIsbn13CheckDigit();  // 4
-obj.getIsbn10CheckDigit();  // X
+obj.getISBN13CheckDigit();  // 4
+obj.getISBN10CheckDigit();  // X
 
 obj.toISBN13();             // 9787030147264 
 obj.toISBN10();             // 703014726X

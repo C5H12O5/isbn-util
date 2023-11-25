@@ -64,7 +64,7 @@ public class ISBNObject implements Serializable {
         this.isbn10CheckDigit = calculateISBN10CheckDigit();
     }
 
-    public String getGs1Prefix() {
+    public String getGS1Prefix() {
         return gs1Prefix;
     }
 
@@ -80,11 +80,11 @@ public class ISBNObject implements Serializable {
         return publication;
     }
 
-    public Character getIsbn13CheckDigit() {
+    public Character getISBN13CheckDigit() {
         return isbn13CheckDigit;
     }
 
-    public Character getIsbn10CheckDigit() {
+    public Character getISBN10CheckDigit() {
         return isbn10CheckDigit;
     }
 
