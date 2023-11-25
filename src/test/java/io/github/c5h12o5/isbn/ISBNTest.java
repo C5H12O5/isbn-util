@@ -66,7 +66,7 @@ public class ISBNTest {
         assertTrue(ISBN.isValid("703014726X"));
         assertTrue(ISBN.isValid("7-03-014726-X"));
         assertTrue(ISBN.isValid("9787030387226"));
-        assertTrue(ISBN.isValid("978-7-03-038722-6"));
+        assertTrue(ISBN.isValid("978 7 03 038722 6"));
 
         assertFalse(ISBN.isValid(" 703014726X"));
         assertFalse(ISBN.isValid(" 7-03-014726-X"));
