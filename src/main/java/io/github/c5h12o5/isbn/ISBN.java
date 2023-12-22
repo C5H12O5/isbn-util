@@ -171,6 +171,24 @@ public final class ISBN {
     }
 
     /**
+     * Check if the given ISBN input is not a valid ISBN-13 or ISBN-10 code.
+     *
+     * <pre>
+     * ISBN.isNotValid(null)                = true
+     * ISBN.isNotValid("703014726X")        = false
+     * ISBN.isNotValid("7-03-014726-X")     = false
+     * ISBN.isNotValid("9787030387226")     = false
+     * ISBN.isNotValid("978-7-03-038722-6") = false
+     * </pre>
+     *
+     * @param isbn the ISBN to validate
+     * @return {@code true} if not a valid ISBN-10 or ISBN-13 code, otherwise {@code false}
+     */
+    public static boolean isNotValid(String isbn) {
+        return !isValid(isbn);
+    }
+
+    /**
      * Check if the given ISBN input is either a valid ISBN-13 or ISBN-10 code.
      *
      * <pre>

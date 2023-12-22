@@ -100,6 +100,17 @@ public class ISBNTest {
     }
 
     @Test
+    public void isNotValid() {
+        assertTrue(ISBN.isNotValid(null));
+        assertTrue(ISBN.isNotValid(""));
+        assertTrue(ISBN.isNotValid("  "));
+        assertTrue(ISBN.isNotValid(" 703014726X"));
+        assertTrue(ISBN.isNotValid("7030147260"));
+        assertTrue(ISBN.isNotValid("7-0-3014726-X"));
+        assertFalse(ISBN.isNotValid("7-03-014726-X"));
+    }
+
+    @Test
     public void isValidISBN13() {
         assertFalse(ISBN.isValidISBN13(null));
 
