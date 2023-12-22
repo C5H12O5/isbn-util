@@ -63,10 +63,25 @@ public class ISBNTest {
     public void isValid() {
         assertFalse(ISBN.isValid(null));
 
+        assertTrue(ISBN.isValid("0-330-28498-3"));
+        assertTrue(ISBN.isValid("1-58182-008-9"));
+        assertTrue(ISBN.isValid("2-226-05257-7"));
+        assertTrue(ISBN.isValid("3-7965-1900-8"));
+        assertTrue(ISBN.isValid("4-19-830127-1"));
+        assertTrue(ISBN.isValid("5-85270-001-0"));
+        assertTrue(ISBN.isValid("7-301-10299-2"));
         assertTrue(ISBN.isValid("703014726X"));
         assertTrue(ISBN.isValid("7-03-014726-X"));
         assertTrue(ISBN.isValid("9787030387226"));
         assertTrue(ISBN.isValid("978 7 03 038722 6"));
+        assertTrue(ISBN.isValid("9787030387226"));
+        assertTrue(ISBN.isValid("978-99988-0-800-3"));
+        assertTrue(ISBN.isValid("978 99988 0 800 3"));
+        assertTrue(ISBN.isValid("9789998808003"));
+        assertTrue(ISBN.isValid("978-65-5525-005-3"));
+        assertTrue(ISBN.isValid("978-600-119-125-1"));
+        assertTrue(ISBN.isValid("978-9910-730-59-7"));
+        assertTrue(ISBN.isValid("978-99903-30-00-7"));
 
         assertFalse(ISBN.isValid(" 703014726X"));
         assertFalse(ISBN.isValid(" 7-03-014726-X"));

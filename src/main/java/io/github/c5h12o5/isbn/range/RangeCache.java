@@ -119,7 +119,7 @@ public class RangeCache implements Serializable {
      * @return the specified element
      */
     private String findElement(String prefix, String isbn, Map<String, List<Range>> ranges) {
-        if (prefix == null || isbn == null || isbn.length() < prefix.length() + Range.RANGE_STR_LENGTH) {
+        if (prefix == null || isbn == null) {
             return null;
         }
         List<Range> rangeList = ranges.get(prefix);
@@ -128,7 +128,8 @@ public class RangeCache implements Serializable {
         }
 
         // extract the 7-digit number after the prefix from the given ISBN
-        String number = isbn.substring(prefix.length(), prefix.length() + Range.RANGE_STR_LENGTH);
+        int prefixLength = prefix.length();
+        String number = (isbn + Range.ZERO_RANGE_STR).substring(prefixLength, prefixLength + Range.RANGE_STR_LENGTH);
         Optional<Range> range = rangeList.stream().filter(r -> r.contains(number)).findFirst();
 
         // extract the element from the 7-digit number by the matched length

@@ -16,6 +16,7 @@ public class Range implements Serializable {
     private static final String HYPHEN = "-";
     private static final int RANGE_ARRAY_LENGTH = 2;
     public static final int RANGE_STR_LENGTH = 7;
+    public static final String ZERO_RANGE_STR = "0000000";
 
     /** The start number of the range. */
     private int start;
