@@ -22,13 +22,13 @@ Maven：
 <dependency>
   <groupId>io.github.c5h12o5</groupId>
   <artifactId>isbn-util</artifactId>
-  <version>1.0.1</version>
+  <version>1.0.2</version>
 </dependency>
 ```
 
 Gradle：
 ```groovy
-implementation 'io.github.c5h12o5:isbn-util:1.0.1'
+implementation 'io.github.c5h12o5:isbn-util:1.0.2'
 ```
 
 #### 2. 使用示例
